@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="assets/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/wineplayer-v2.css">
+    <title>wineplayer</title>
+</head>
+<body>
+    <!--player-->
+    <div>
+        <div>
+            <div class="wineplayer">
+                <video  poster="" >
+                    <source src="">
+                </video>
+                <div class="video-info">
+                    <div class="title">
+                        <h4>You are watching</h4>
+                        <h1 class="h1-title"></h1>
+                        <h2 class="h2-serie"></h2>
+                        <h3 class="h3-autor"></h3>
+                        <h5 class="h5-description"></h5>
+                    </div>
+                </div>
+                <div class="next-video-preview-container">
+                    <div class="next-video-preview-col-1">
+                        <img src="" class="next-video-preview-image" alt="">
+                    </div>
+                    <div class="next-video-preview-col-2">
+                        <h1 class="next-video-title">Title</h1>
+                        <h2 class="next-video-serie">Serie</h2>
+                        <span class="next-video-total-time">00:00:00</span>
+                    </div>
+                </div>
+                <div class="previous-video-preview-container">
+                    <div class="previous-video-preview-col-1">
+                        <img src="" class="previous-video-preview-image" alt="">
+                    </div>
+                    <div class="previous-video-preview-col-2">
+                        <h1 class="previous-video-title">Title</h1>
+                        <h2 class="previous-video-serie">Serie</h2>
+                        <span class="previous-video-total-time">00:00:00</span>
+                    </div>
+                </div>
+                <div class="center-controls">
+                    <div class="controls-container-progress-bar">
+                        <div>
+                            <input type="range" class="video-progress" min="0" max="100" value="0" step='0.1'>
+                        </div>
+                    </div>
+                    <div class="controls-container">
+                        <div class="play-controls">
+                            <i class="fas fa-step-backward"></i>
+                            <i class="fas fa-play video-play"></i>
+                            <i class="fas fa-step-forward"></i>
+                            <span class="backward-ten">10</span>
+                            <i class="far fa-undo-alt"></i>
+                            <span class="forward-ten">10</span>
+                            <i class="far fa-redo-alt"></i>
+                            <i class="far fa-volume-up volume-icon"></i>
+                            <span class="total-time">00:00:00</span>
+                            <span> - </span>
+                            <span class="current-time">00:00:00</span>
+                        </div>
+                        <div class="screen-controls">
+                            <i class="far fa-info-circle"></i>
+                            <i class="fad fa-stream"></i>
+                            <i class="fas fa-cog"></i>
+                            <i class="fal fa-closed-captioning"></i>
+                            <i class="fas fa-expand"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--end player-->
+    <!--scripts-->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/moment@2.25.3/moment.js"></script>
+    <script src="assets/js/wineplayer-v2.js"></script>
+    <!--end scripts-->
+</body>
+</html>
