@@ -1,0 +1,1155 @@
+.wineplayer{
+    height: 420px;
+    background-color: black;
+    position: relative;
+    font-size:20px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.wineplayer:-moz-full-screen{
+    font-size: 25px;
+}
+
+.wineplayer:-webkit-full-screen{
+    font-size: 25px;
+}
+
+.wineplayer:fullscreen{
+    font-size: 25px;
+}
+
+video{
+    height: 100%;
+    width: 100%;
+}
+
+ .wineplayer:-moz-full-screen .video-info {
+    top: 13rem;
+    left: 5rem;
+    color:white;
+    font-size: 1.5rem;
+}
+
+.wineplayer:-webkit-full-screen .video-info{
+    top: 13rem;
+    left: 5rem;
+    color:white;
+    font-size: 1.5rem;
+}
+
+.wineplayer:fullscreen .video-info{
+    top: 13rem;
+    left: 5rem;
+    color:white;
+    font-size: 1.5rem;
+}
+
+.wineplayer:fullscreen .video-info  .title .h1-title{
+    font-size:3.5rem;
+}
+
+.wineplayer:fullscreen .video-info .title .h2-serie{
+    font-size:2rem;
+}
+
+.wineplayer:fullscreen .video-info .title .h3-autor{
+    font-size:2rem;
+    font-weight: 400;
+}
+
+.wineplayer:fullscreen .video-info .title .h5-description{
+    font-weight: 400;
+    font-size: 1.3rem;
+}
+
+.controls-container i, span {
+    text-shadow: 1px 1px 7px rgb(0,0,0);
+}
+
+.video-progress-bar{
+    background-color: red;
+    height: 0.1rem;
+    width: 100%;
+    position: absolute;
+    bottom: 2.5rem;
+}
+
+.progress-bar-container{
+    height: 0.1rem;
+    overflow: hidden;
+    line-height: 0;
+    font-size: .75rem;
+    background-color: #e9ecef;
+    border-radius: .25rem;
+    width: 100%;
+    position: absolute;
+    bottom: 2.5rem;
+}
+
+.video-progress{
+    position: absolute;
+    bottom: 1.7rem;
+    opacity: 1;
+}
+
+
+
+@media(max-width:859px){
+    .wineplayer{
+        height: inherit;
+        background-color: inherit;
+    }
+
+    .video-info{
+        display: none;
+    }
+
+    .previous-video-preview{
+        display: none;
+    }
+
+    .previous-video-preview-image{
+        display: none;
+    }
+
+
+    .next-video-preview-container{
+        display: none;
+    }
+
+    .next-video-preview-image{
+        display: none;
+    }
+
+    .previous-video-preview-container{
+        display: none;
+    }
+}
+
+@media(min-width:860px){
+    
+    .video-info{
+        width: 50%;
+        height: 50px;
+        position: absolute;
+        top: 4rem;
+        left: 5rem;
+        font-size: 1rem;
+        color:white;
+        opacity:1;
+        text-shadow: 1px 1px 5px #000000;
+        /*-webkit-transition: .2s;
+        transition: opacity .2s;*/
+        display: none;
+    }
+
+    /*.video-info:hover{
+        opacity: 1;
+    }*/
+
+    .video-info .title .h1-title, .h2-serie, .h3-autor, h4, h5{
+        margin:0px;
+        margin-top: 0.5rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .video-info .title .h1-title{
+        font-weight: 800;
+        font-size:2.5rem;
+    }
+    .video-info .title .h2-serie{
+        font-size: 1.5rem;
+        font-weight: 400;
+    }
+    .video-info .title .h3-autor{
+        font-size: 1.3rem;
+        font-weight: 100;
+    }
+    .video-info .title .h5-description{
+        font-size: 1rem;
+        font-weight: 300;
+        letter-spacing: 0.3pt; 
+    }
+
+    
+    .previous-video-preview{
+        width: 169px;
+        height: 105px;
+        padding: 2px;
+        position: absolute;
+        bottom: 5.5rem;
+        left: 3rem;
+        border: 2px solid #ffffff42;
+        border-radius: 5px;
+        text-align: center;
+        display: none;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        -ms-border-radius: 5px;
+        -o-border-radius: 5px;
+    }
+
+    .previous-video-preview-image{
+        max-width: 100%;
+        height: 100%;
+    }
+
+
+    .previous-video-preview-container{
+        width: 550px;
+        height: 105px;
+        padding: 2px;
+        position: absolute;
+        bottom: 5.5rem;
+        left: 3rem;
+        background-color: rgba(0, 0, 0, 0.904);
+        border: 2px solid #00000042;
+        border-radius: 0px;
+        /*text-align: center;
+        */display:none;
+        -webkit-border-radius: 0px;
+        -moz-border-radius: 0px;
+        -ms-border-radius: 0px;
+        -o-border-radius: 0px;
+    }
+
+    .previous-video-preview-col-1{
+        float: left;
+        height: 105px;
+        width: 200px;
+    }
+
+    .previous-video-preview-col-2{
+        float: left;
+        height: 105px;
+        width: 350px;
+        color: white;
+        padding-top: 1rem;
+    }
+
+    .previous-video-preview-col-2 h1, h2, h3, .next-video-total-time{
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+
+    .previous-video-preview-image{
+        max-width: 100%;
+        height: 100%;
+    }
+
+    .previous-video-title{
+        font-size: 0.7rem;
+    }
+
+    .previous-video-serie{
+        font-size: 0.9rem;
+        font-weight: 100;
+    }
+
+    .previous-video-autor{
+        font-size: 0.9rem;
+        font-weight: 100;
+    }
+
+    .previous-video-total-time{
+        font-size: 0.9rem;
+    }
+
+
+
+    .next-video-preview-container{
+        width: 550px;
+        height: 105px;
+        padding: 2px;
+        position: absolute;
+        bottom: 5.5rem;
+        left: 3rem;
+        background-color: rgba(0, 0, 0, 0.904);
+        border: 2px solid #00000042;
+        border-radius: 0px;
+        /*text-align: center;
+        */display:none;
+        -webkit-border-radius: 0px;
+        -moz-border-radius: 0px;
+        -ms-border-radius: 0px;
+        -o-border-radius: 0px;
+    }
+
+    .next-video-preview-col-1{
+        float: left;
+        height: 105px;
+        width: 200px;
+    }
+    .next-video-preview-col-2{
+        float: left;
+        height: 105px;
+        width: 350px;
+        color: white;
+        padding-top: 1rem;
+    }
+
+    .next-video-preview-col-2 h1, h2, h3, .next-video-total-time{
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+
+    .next-video-preview-image{
+        max-width: 100%;
+        height: 100%;
+    }
+
+    .next-video-title{
+        font-size: 0.7rem;
+    }
+
+    .next-video-serie{
+        font-size: 0.9rem;
+        font-weight: 100;
+    }
+
+    .next-video-autor{
+        font-size: 0.9rem;
+        font-weight: 100;
+    }
+
+    .next-video-total-time{
+        font-size: 0.9rem;
+    }
+
+
+    .center-controls{
+        display: flex;
+        justify-content: center;
+    }
+
+    .controls-container{
+        position: absolute;
+        color: white;
+        width: 90%;
+        bottom: 20px;
+        display: flex;
+        justify-content: space-between;
+        opacity: 0.7;
+        -webkit-transition: .2s;
+        transition: opacity .2s;
+    }
+
+    .controls-container i, span{
+        cursor:pointer;
+    }
+
+    .controls-container-progress-bar{
+        position: absolute;
+        color: white;
+        width: 90%;
+        bottom: 20px;
+        display: flex;
+        justify-content: space-between;
+        opacity: 1;
+    }
+
+    .play-controls i{
+        padding-right: 20px;
+        opacity: 0.7;
+        -webkit-transition: .2s;
+        transition: opacity .2s;
+    }
+    .play-controls i:hover{
+        opacity: 1;
+    }
+
+    .screen-controls i{
+        padding-left: 10px;
+        opacity: 0.7;
+        -webkit-transition: .2s;
+        transition: opacity .2s;
+    }
+
+    .screen-controls i:hover{
+        opacity: 1;
+    }
+    
+    .backward-ten{
+        position: absolute;
+        font-size: 0.5rem;
+        top: 0.45rem;
+        padding-left: 0.4rem;
+    }
+
+    .forward-ten{
+        position: absolute;
+        font-size: 0.5rem;
+        top: 0.45rem;
+        padding-left: 0.3rem;
+    }
+
+    .wineplayer:-moz-full-screen .backward-ten{
+        position: absolute;
+        font-size: 0.6rem;
+        top: 0.6rem;
+        padding-left: 0.45rem;
+    }
+    .wineplayer:-moz-full-screen .forward-ten{
+        position: absolute;
+        font-size: 0.6rem;
+        top: 0.6rem;
+        padding-left: 0.4rem;
+    }
+
+    .video-progress{
+        position: absolute;
+        bottom: 2.5rem;
+        width: 100%;
+        background: transparent;
+        -webkit-appearance: none;
+    }
+
+    .video-progress::-webkit-slider-thumb {
+        -webkit-appearance: none;
+    }
+
+    .video-progress:focus {
+        outline: none; /* Removes the blue border. You should probably do some kind of focus styling for accessibility reasons though. */
+    }
+
+    .video-progress::-ms-track {
+        width: 100%;
+        cursor: pointer;
+        -webkit-appearance: none;
+        /* Hides the slider so custom styles can be added */
+        background: transparent; 
+        border-color: transparent;
+        color: transparent;
+    }
+
+    .video-progress::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        border: 8px solid #df331f;
+        height: 0px;
+        width: 0px;
+        border-radius: 10px;
+        background: #ffffff;
+        cursor: pointer;
+        margin-top: -7px;
+        /*YouneedtospecifyamargininChrome,butinFirefoxandIEitisautomatic*/
+        /*box-shadow: 1px 1px 1px #ffffff, 1px 1px 10px #504c4c;*/
+        /*Addcooleffectstoyoursliders!*/
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        -ms-border-radius: 10px;
+        -o-border-radius: 10px;
+    }
+
+    .video-progress::-moz-range-thumb {
+        /*box-shadow: 0px 0px 5px #ffffff, 1px 1px 10px #504c4c;*/
+        border: 8px solid #df331f;
+        height: 0px;
+        width: 0px;
+        box-sizing: content-box;
+        border-radius: 10px;
+        background: #ffffff;
+        cursor: pointer;
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        -ms-border-radius: 10px;
+        -o-border-radius: 10px;
+    }
+
+    .video-progress::-ms-thumb {
+        /*box-shadow: 1px 1px 1px #ffffff, 1px 1px 10px #504c4c;*/
+        border: 8px solid #df331f;
+        height: 0px;
+        width: 0px;
+        border-radius: 10px;
+        background: #ffffff;
+        cursor: pointer;
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        -ms-border-radius: 10px;
+        -o-border-radius: 10px;
+    }
+
+    .video-progress::-webkit-slider-runnable-track {
+        -webkit-appearance: none;
+        width: 100%;
+        height: 3px;
+        cursor: pointer;
+        /*box-shadow: 1px 1px 1px #ffffff, 1px 1px 10px #504c4c;
+        */background: #ffffff;
+        border-radius: 1.3px;
+        border: 0.2px solid none;
+        -webkit-border-radius: 1.3px;
+        -moz-border-radius: 1.3px;
+        -ms-border-radius: 1.3px;
+        -o-border-radius: 1.3px;
+    }
+
+    /*
+    color de fondo de range para chrome
+    http://w3.unpocodetodo.info/css3/input-type-range-javascript.php
+    */
+    .video-progress::-moz-range-track {
+        width: 100%;
+        height: 2px;
+        cursor: pointer;
+        box-shadow: 1px 1px 1px #ffffff, 1px 1px 10px #504c4c;
+        background: #ffffff;
+        border-radius: 1.3px;
+        border: 0.2px solid none;
+    }
+
+    .video-progress::-ms-track {
+        width: 100%;
+        height: 2px;
+        cursor: pointer;
+        background: transparent;
+        border-color: transparent;
+        border-width: 16px 0;
+        color: transparent;
+    }
+
+    input[type=range]::-moz-range-progress {
+        background-color: #df331f; /* color: deslizador mozilla */
+    }
+    
+    input[type=range]::-webkit-progress-value {
+    background-color: #000000; /* color: deslizador mozilla */
+    height: 10px;
+    }
+
+    .video-progress::-ms-fill-lower {
+        background: #ffffff;
+        border: 0.2px solid #ffffff;
+        border-radius: 2.6px;
+        box-shadow: 1px 1px 1px #ffffff, 1px 1px 10px #504c4c;
+    }
+
+    .video-progress:focus::-ms-fill-lower {
+        background: #ffffff;
+    }
+
+    .video-progress::-ms-fill-upper {
+        background: #ffffff;
+        border: 0.2px solid none;
+        border-radius: 2.6px;
+        box-shadow: 1px 1px 1px #ffffff, 1px 1px 10px #504c4c;
+    }
+
+    .video.progress:focus::-ms-fill-upper {
+        background: #ffffff;
+    }
+}
+
+@media(max-width:859px){
+
+    .center-controls{
+        display: flex;
+        justify-content: center;
+    }
+
+    .controls-container{
+        display: flex;
+        justify-content: center;
+        color: white;
+        width: 100%;
+    }
+
+    .backward-ten, .fa-undo-alt, .forward-ten, .fa-redo-alt,
+    .fa-volume-up, .total-time{
+        display: none;
+    }
+
+    .fa-play, .fa-pause{
+        position: absolute;
+        bottom: 45%;
+        font-size: 2em;
+    }
+
+    .fa-step-backward{
+        position: absolute;
+        bottom: 48%;
+        font-size: 1.5em;
+        left: 3rem;
+    }
+
+    .fa-step-forward{
+        position: absolute;
+        bottom: 48%;
+        font-size: 1.8rem;
+        right: 3rem;
+    }
+
+    .video-progress-bar{
+        background-color: red;
+        height: 0.1rem;
+        width: 65%  ;
+        position: absolute;
+        bottom: 3rem;
+        left: 2rem;
+    }
+    .video-progress{
+        width: 65%;
+        left: 1.906rem;
+        bottom: 5.3rem;
+        -webkit-appearance: none;
+        background: white;
+        height: 0px;
+        
+    }
+
+    .progress-bar-container{
+        width: 65%;
+        bottom: 3rem;
+        left: 1.97rem;
+    }
+
+    .current-time{
+        position: absolute;
+        font-size: 68%;
+        right: 2rem;
+        bottom: 4.85rem;
+    }
+
+    .screen-controls{
+        position: absolute;
+        bottom: 2.5rem;
+        padding-left: 35px;
+    }
+
+    .screen-controls i {
+        padding-right: 2.5rem;
+    }
+
+    .video-progress::-webkit-slider-thumb {
+        -webkit-appearance: none;
+    }
+
+    .video-progress:focus {
+        outline: none; /* Removes the blue border. You should probably do some kind of focus styling for accessibility reasons though. */
+    }
+
+    .video-progress::-ms-track {
+        width: 100%;
+        cursor: pointer;
+      
+        /* Hides the slider so custom styles can be added */
+        background: transparent; 
+        border-color: transparent;
+        color: transparent;
+    }
+
+    .video-progress::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        border: 1px solid #ffffff;
+        height: 12px;
+        width: 12px;
+        border-radius: 10px;
+        background: #ffffff;
+        cursor: pointer;
+        margin-top: -5px;
+        /*YouneedtospecifyamargininChrome,butinFirefoxandIEitisautomatic*/
+        box-shadow: 1px 1px 1px #ffffff, 1px 1px 10px #504c4c;
+        /*Addcooleffectstoyoursliders!*/
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        -ms-border-radius: 10px;
+        -o-border-radius: 10px;
+    }
+
+    .video-progress::-moz-range-thumb {
+        box-shadow: 1px 1px 1px #ffffff, 1px 1px 10px #504c4c;
+        border: 1px solid #ffffff;
+        height: 12px;
+        width: 12px;
+        border-radius: 10px;
+        background: #ffffff;
+        cursor: pointer;
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        -ms-border-radius: 10px;
+        -o-border-radius: 10px;
+    }
+
+      .video-progress::-ms-thumb {
+        box-shadow: 1px 1px 1px #ffffff, 1px 1px 10px #504c4c;
+        border: 1px solid #ffffff;
+        height: 16px;
+        width: 16px;
+        border-radius: 10px;
+        background: #ffffff;
+        cursor: pointer;
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        -ms-border-radius: 10px;
+        -o-border-radius: 10px;
+    }
+
+    .video-progress::-webkit-slider-runnable-track {
+        width: 100%;
+        height: 3px;
+        cursor: pointer;
+        box-shadow: 1px 1px 1px #ffffff, 1px 1px 10px #504c4c;
+        background: #ffffff;
+        border-radius: 1.3px;
+        border: 0.2px solid none;
+    }
+
+    .video-progress::-webkit-slider-runnable-track {
+        background: #ffffff;
+    }
+
+    .video-progress::-moz-range-track {
+        width: 100%;
+        height: 3px;
+        cursor: pointer;
+        box-shadow: 1px 1px 1px #ffffff, 1px 1px 10px #504c4c;
+        background: #ffffff;
+        border-radius: 1.3px;
+        border: 0.2px solid none;
+    }
+
+    .video-progress::-ms-track {
+        width: 100%;
+        height: 3px;
+        cursor: pointer;
+        background: transparent;
+        border-color: transparent;
+        border-width: 16px 0;
+        color: transparent;
+    }
+
+    .video-progress::-ms-fill-lower {
+        background: #ffffff;
+        border: 0.2px solid #ffffff;
+        border-radius: 2.6px;
+        box-shadow: 1px 1px 1px #ffffff, 1px 1px 10px #504c4c;
+    }
+
+    .video-progress:focus::-ms-fill-lower {
+        background: #ffffff;
+    }
+
+    .video-progress::-ms-fill-upper {
+        background: #ffffff;
+        border: 0.2px solid none;
+        border-radius: 2.6px;
+        box-shadow: 1px 1px 1px #ffffff, 1px 1px 10px #504c4c;
+    }
+
+    .video.progress:focus::-ms-fill-upper {
+        background: #ffffff;
+    }
+
+    
+}
+
+@media (min-width:400px) and (max-width:499px){
+    .video-progress-bar{
+        width: 68%  ;
+    }
+    .video-progress{
+        position: absolute;
+        width: 68%;
+        bottom: 5.3rem;
+        left: 1.906rem;
+        opacity: 1;
+    }
+    .progress-bar-container{
+        width: 68%;
+        bottom: 3rem;
+        left: 1.97rem;
+    }
+
+    .video-progress::-webkit-slider-thumb {
+        -webkit-appearance: none;
+    }
+
+    .video-progress:focus {
+        outline: none; /* Removes the blue border. You should probably do some kind of focus styling for accessibility reasons though. */
+    }
+
+    .video-progress::-ms-track {
+        width: 100%;
+        cursor: pointer;
+      
+        /* Hides the slider so custom styles can be added */
+        background: transparent; 
+        border-color: transparent;
+        color: transparent;
+    }
+
+    .video-progress::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        border: 1px solid #ffffff;
+        height: 16px;
+        width: 16px;
+        border-radius: 10px;
+        background: #ffffff;
+        cursor: pointer;
+        margin-top: -7px;
+        /*YouneedtospecifyamargininChrome,butinFirefoxandIEitisautomatic*/box-shadow: 1px 1px 1px #ffffff, 1px 1px 10px #504c4c;
+        /*Addcooleffectstoyoursliders!*/
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        -ms-border-radius: 10px;
+        -o-border-radius: 10px;
+    }
+
+    .video-progress::-moz-range-thumb {
+        box-shadow: 1px 1px 1px #ffffff, 1px 1px 10px #504c4c;
+        border: 1px solid #ffffff;
+        height: 12px;
+        width: 12px;
+        border-radius: 10px;
+        background: #ffffff;
+        cursor: pointer;
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        -ms-border-radius: 10px;
+        -o-border-radius: 10px;
+    }
+
+      .video-progress::-ms-thumb {
+        box-shadow: 1px 1px 1px #ffffff, 1px 1px 10px #504c4c;
+        border: 1px solid #ffffff;
+        height: 16px;
+        width: 16px;
+        border-radius: 10px;
+        background: #ffffff;
+        cursor: pointer;
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        -ms-border-radius: 10px;
+        -o-border-radius: 10px;
+    }
+
+    .video-progress::-webkit-slider-runnable-track {
+        width: 100%;
+        height: 3px;
+        cursor: pointer;
+        box-shadow: 1px 1px 1px #ffffff, 1px 1px 10px #504c4c;
+        background: #ffffff;
+        border-radius: 1.3px;
+        border: 0.2px solid none;
+    }
+
+    .video-progress::-webkit-slider-runnable-track {
+        background: #ffffff;
+    }
+
+    .video-progress::-moz-range-track {
+        width: 100%;
+        height: 3px;
+        cursor: pointer;
+        box-shadow: 1px 1px 1px #ffffff, 1px 1px 10px #504c4c;
+        background: #ffffff;
+        border-radius: 1.3px;
+        border: 0.2px solid none;
+    }
+
+    .video-progress::-ms-track {
+        width: 100%;
+        height: 3px;
+        cursor: pointer;
+        background: transparent;
+        border-color: transparent;
+        border-width: 16px 0;
+        color: transparent;
+    }
+
+    .video-progress::-ms-fill-lower {
+        background: #ffffff;
+        border: 0.2px solid #ffffff;
+        border-radius: 2.6px;
+        box-shadow: 1px 1px 1px #ffffff, 1px 1px 10px #504c4c;
+    }
+
+    .video-progress:focus::-ms-fill-lower {
+        background: #ffffff;
+    }
+
+    .video-progress::-ms-fill-upper {
+        background: #ffffff;
+        border: 0.2px solid none;
+        border-radius: 2.6px;
+        box-shadow: 1px 1px 1px #ffffff, 1px 1px 10px #504c4c;
+    }
+
+    .video.progress:focus::-ms-fill-upper {
+        background: #ffffff;
+    }
+}
+
+@media (min-width:500px) and (max-width:599px){
+    .video-progress-bar{
+        width: 75%;
+    }
+    .video-progress{
+        position: absolute;
+        width: 75%;
+        bottom: 5.3rem;
+        left: 1.906rem;
+        opacity: 1;
+    }
+    .progress-bar-container{
+        width: 75%;
+        bottom: 3rem;
+        left: 1.97rem;
+    }
+    
+    .video-progress::-webkit-slider-thumb {
+        -webkit-appearance: none;
+    }
+
+    .video-progress:focus {
+        outline: none; /* Removes the blue border. You should probably do some kind of focus styling for accessibility reasons though. */
+    }
+
+    .video-progress::-ms-track {
+        width: 100%;
+        cursor: pointer;
+      
+        /* Hides the slider so custom styles can be added */
+        background: transparent; 
+        border-color: transparent;
+        color: transparent;
+    }
+
+    .video-progress::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        border: 1px solid #ffffff;
+        height: 16px;
+        width: 16px;
+        border-radius: 10px;
+        background: #ffffff;
+        cursor: pointer;
+        margin-top: -7px;
+        /*YouneedtospecifyamargininChrome,butinFirefoxandIEitisautomatic*/box-shadow: 1px 1px 1px #ffffff, 1px 1px 10px #504c4c;
+        /*Addcooleffectstoyoursliders!*/
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        -ms-border-radius: 10px;
+        -o-border-radius: 10px;
+    }
+
+    .video-progress::-moz-range-thumb {
+        box-shadow: 1px 1px 1px #ffffff, 1px 1px 10px #504c4c;
+        border: 1px solid #ffffff;
+        height: 12px;
+        width: 12px;
+        border-radius: 10px;
+        background: #ffffff;
+        cursor: pointer;
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        -ms-border-radius: 10px;
+        -o-border-radius: 10px;
+    }
+
+      .video-progress::-ms-thumb {
+        box-shadow: 1px 1px 1px #ffffff, 1px 1px 10px #504c4c;
+        border: 1px solid #ffffff;
+        height: 16px;
+        width: 16px;
+        border-radius: 10px;
+        background: #ffffff;
+        cursor: pointer;
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        -ms-border-radius: 10px;
+        -o-border-radius: 10px;
+    }
+
+    .video-progress::-webkit-slider-runnable-track {
+        width: 100%;
+        height: 3px;
+        cursor: pointer;
+        box-shadow: 1px 1px 1px #ffffff, 1px 1px 10px #504c4c;
+        background: #ffffff;
+        border-radius: 1.3px;
+        border: 0.2px solid none;
+    }
+
+    .video-progress::-webkit-slider-runnable-track {
+        background: #ffffff;
+    }
+
+    .video-progress::-moz-range-track {
+        width: 100%;
+        height: 3px;
+        cursor: pointer;
+        box-shadow: 1px 1px 1px #ffffff, 1px 1px 10px #504c4c;
+        background: #ffffff;
+        border-radius: 1.3px;
+        border: 0.2px solid none;
+    }
+
+    .video-progress::-ms-track {
+        width: 100%;
+        height: 3px;
+        cursor: pointer;
+        background: transparent;
+        border-color: transparent;
+        border-width: 16px 0;
+        color: transparent;
+    }
+
+    .video-progress::-ms-fill-lower {
+        background: #ffffff;
+        border: 0.2px solid #ffffff;
+        border-radius: 2.6px;
+        box-shadow: 1px 1px 1px #ffffff, 1px 1px 10px #504c4c;
+    }
+
+    .video-progress:focus::-ms-fill-lower {
+        background: #ffffff;
+    }
+
+    .video-progress::-ms-fill-upper {
+        background: #ffffff;
+        border: 0.2px solid none;
+        border-radius: 2.6px;
+        box-shadow: 1px 1px 1px #ffffff, 1px 1px 10px #504c4c;
+    }
+
+    .video.progress:focus::-ms-fill-upper {
+        background: #ffffff;
+    }
+}
+
+@media (min-width:600px) and (max-width:850px){
+    .video-progress-bar{
+        width: 80%;
+    }
+    .video-progress{
+        position: absolute;
+        width: 80%;
+        bottom: 5.3rem;
+        left: 1.906rem;
+        opacity: 1;
+    }
+    .progress-bar-container{
+        width: 80%;
+        bottom: 3rem;
+        left: 1.97rem;
+    }
+
+    .video-progress::-webkit-slider-thumb {
+        -webkit-appearance: none;
+    }
+
+    .video-progress:focus {
+        outline: none; /* Removes the blue border. You should probably do some kind of focus styling for accessibility reasons though. */
+    }
+
+    .video-progress::-ms-track {
+        width: 100%;
+        cursor: pointer;
+      
+        /* Hides the slider so custom styles can be added */
+        background: transparent; 
+        border-color: transparent;
+        color: transparent;
+    }
+
+    .video-progress::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        border: 1px solid #ffffff;
+        height: 16px;
+        width: 16px;
+        border-radius: 10px;
+        background: #ffffff;
+        cursor: pointer;
+        margin-top: -7px;
+        /*YouneedtospecifyamargininChrome,butinFirefoxandIEitisautomatic*/box-shadow: 1px 1px 1px #ffffff, 1px 1px 10px #504c4c;
+        /*Addcooleffectstoyoursliders!*/
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        -ms-border-radius: 10px;
+        -o-border-radius: 10px;
+    }
+
+    .video-progress::-moz-range-thumb {
+        box-shadow: 1px 1px 1px #ffffff, 1px 1px 10px #504c4c;
+        border: 1px solid #ffffff;
+        height: 12px;
+        width: 12px;
+        border-radius: 10px;
+        background: #ffffff;
+        cursor: pointer;
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        -ms-border-radius: 10px;
+        -o-border-radius: 10px;
+    }
+
+      .video-progress::-ms-thumb {
+        box-shadow: 1px 1px 1px #ffffff, 1px 1px 10px #504c4c;
+        border: 1px solid #ffffff;
+        height: 16px;
+        width: 16px;
+        border-radius: 10px;
+        background: #ffffff;
+        cursor: pointer;
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        -ms-border-radius: 10px;
+        -o-border-radius: 10px;
+    }
+
+    .video-progress::-webkit-slider-runnable-track {
+        width: 100%;
+        height: 3px;
+        cursor: pointer;
+        box-shadow: 1px 1px 1px #ffffff, 1px 1px 10px #504c4c;
+        background: #ffffff;
+        border-radius: 1.3px;
+        border: 0.2px solid none;
+    }
+
+    .video-progress::-webkit-slider-runnable-track {
+        background: #ffffff;
+    }
+
+    .video-progress::-moz-range-track {
+        width: 100%;
+        height: 3px;
+        cursor: pointer;
+        box-shadow: 1px 1px 1px #ffffff, 1px 1px 10px #504c4c;
+        background: #ffffff;
+        border-radius: 1.3px;
+        border: 0.2px solid none;
+    }
+
+    .video-progress::-ms-track {
+        width: 100%;
+        height: 3px;
+        cursor: pointer;
+        background: transparent;
+        border-color: transparent;
+        border-width: 16px 0;
+        color: transparent;
+    }
+
+    .video-progress::-ms-fill-lower {
+        background: #ffffff;
+        border: 0.2px solid #ffffff;
+        border-radius: 2.6px;
+        box-shadow: 1px 1px 1px #ffffff, 1px 1px 10px #504c4c;
+    }
+
+    .video-progress:focus::-ms-fill-lower {
+        background: #ffffff;
+    }
+
+    .video-progress::-ms-fill-upper {
+        background: #ffffff;
+        border: 0.2px solid none;
+        border-radius: 2.6px;
+        box-shadow: 1px 1px 1px #ffffff, 1px 1px 10px #504c4c;
+    }
+
+    .video.progress:focus::-ms-fill-upper {
+        background: #ffffff;
+    }
+}
