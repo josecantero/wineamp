@@ -260,6 +260,10 @@ let jqxhr = $.getJSON( "videos.json", function() {
                 wineplayer.msRequestFullscreen();
             }
 
+            if(screen.width<850){
+                screen.orientation.lock('landscape');
+            }
+
             // https://usefulangle.com/post/105/javascript-change-screen-orientation
             /*screen.orientation.lock("portrait")
             .then(function() {
@@ -278,6 +282,10 @@ let jqxhr = $.getJSON( "videos.json", function() {
                 document.mozCancelFullScreen();
             } else if (document.msExitFullscreen) {
                 document.msExitFullscreen();
+            }
+            
+            if(screen.width<850){
+                screen.orientation.lock('portrait');
             }
         }
     }
@@ -364,6 +372,11 @@ https://jsfiddle.net/daltonrenaldo/4zxm7fw0/
  * obtener valur de range al colocar puntero sobre el mismo
  * https://stackoverflow.com/questions/35631551/get-the-value-on-hover-of-an-input-type-range
  * esto servirá para obtener captura del video en dicha posición.
+ */
+
+/**
+ * SCREEN LOCK PARA MOBILES
+ * https://developer.mozilla.org/en-US/docs/Web/API/CSS_Object_Model/Managing_screen_orientation
  */
 
 
