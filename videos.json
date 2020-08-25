@@ -1,0 +1,32 @@
+{
+    "video":[
+        {
+            "url":"01-CinematicLightingForPortraiture-ChrisKnight-ClassIntroduction-HD.mp4",
+            "poster":"180710_chrisknight_cinematiclighting_christinemarucci_digitalweb_1600x900_finalv3.jpg",
+            "name":"01 - Class Introduction",
+            "duration":269.233333,
+            "nextVideo":"profoto-d1-chris-knight-homage-to-hollywood-final-009.jpg",
+            "nextVideoName":"02 - What Is Cinematic Lighting",
+            "nextVideoDuration":"00:06:42",
+            "previousVideo":"",
+            "autor":"ChrisKnight",
+            "serie":"Cinematic Lighting For Portraiture",
+            "description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+        },
+        {
+            "url":"02-CinematicLightingForPortraiture-ChrisKnight-WhatIsCinematicLighting-HD.mp4",
+            "poster":"profoto-d1-chris-knight-homage-to-hollywood-final-009.jpg",
+            "name":"02 - What Is Cinematic Lighting",
+            "duration":402.133333,
+            "nextVideo":"",
+            "nextVideoName":"",
+            "nextVideoDuration":"",
+            "previousVideo":"180710_chrisknight_cinematiclighting_christinemarucci_digitalweb_1600x900_finalv3.jpg",
+            "previousVideoName":"01 - Class Introduction",
+            "previousVideoDuration":"00:04:29",  
+            "autor":"ChrisKnight",
+            "serie":"Cinematic Lighting For Portraiture",
+            "description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+        }
+    ]
+}
