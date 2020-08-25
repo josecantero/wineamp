@@ -285,7 +285,7 @@ let jqxhr = $.getJSON( "videos.json", function() {
             }
             
             if(screen.width<850){
-                screen.orientation.lock('portrait');
+                screen.orientation.unlock();
             }
         }
     }
