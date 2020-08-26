@@ -555,7 +555,7 @@ video{
     }
 
     .backward-ten, .fa-undo-alt, .forward-ten, .fa-redo-alt,
-    .fa-volume-up, .total-time{
+    .fa-volume-up, .total-time, .time-separation{
         display: none;
     }
 
