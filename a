@@ -1,0 +1,47 @@
+[33mcommit 72cd627f42fdaa6a89769adc49d55b38bcf841f4[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m
+Author: jesssuss <josedejesuscantero@gmail.com>
+Date:   Wed Aug 26 00:25:06 2020 -0400
+
+    fix: do not show time separator on mobile version
+
+[33mcommit c933dd40d71669b9668b0c89ecbc81bf1299ce7d[m[33m ([m[1;31morigin/master[m[33m)[m
+Author: jesssuss <josedejesuscantero@gmail.com>
+Date:   Tue Aug 25 12:11:25 2020 -0400
+
+    unlock screen on landscape
+
+[33mcommit 4a67a8618eaec6e1b3b05b40ef8b3bab6a48a5e9[m
+Author: jesssuss <josedejesuscantero@gmail.com>
+Date:   Tue Aug 25 11:13:31 2020 -0400
+
+    screen lock on landscape in js script
+
+[33mcommit 96032f67d1e4c0aa437da29e1294b71a4b01f327[m
+Author: jesssuss <josedejesuscantero@gmail.com>
+Date:   Mon Aug 24 23:44:02 2020 -0400
+
+    videosjson
+
+[33mcommit 01a514d85e22d171b8e15c0cd367335b22f0afe0[m
+Author: jesssuss <josedejesuscantero@gmail.com>
+Date:   Mon Aug 24 23:03:50 2020 -0400
+
+    primeros assets
+
+[33mcommit 19bdeddffdcb2df3b95c7a2e2435903f221286ce[m
+Author: jesssuss <josedejesuscantero@gmail.com>
+Date:   Mon Aug 24 20:31:24 2020 -0400
+
+    primeros archivos videos 2
+
+[33mcommit ec73ec4fc743df9226417ea6475fff256fa3f5c7[m
+Author: jesssuss <josedejesuscantero@gmail.com>
+Date:   Mon Aug 24 20:08:00 2020 -0400
+
+    primeros archivos videos
+
+[33mcommit 549fcc3f11a94e4f515310855d51d8edc11cb5d5[m
+Author: jesssuss <josedejesuscantero@gmail.com>
+Date:   Mon Aug 24 19:51:09 2020 -0400
+
+    primeros archivos

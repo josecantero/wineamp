@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>wineplayer</title>
+
+    <link rel="stylesheet" href="assets/css/all.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/wineplayer.css">
+    
+
+        
+</head>
+<body>
+    <div class="player bg-black">
+        <video autoload='auto' poster="180710_chrisknight_cinematiclighting_christinemarucci_digitalweb_1600x900_finalv3.jpg" src="22-CinematicLightingForPortraiture-ChrisKnight-TheaterShootCapturingThe1stShot-HD.mp4" type="video/mp4"></video>
+        <div class="scrolling-wrapper scrolling-wrapper-hided">
+            <div class="card-image">
+                <img class="list-image-content" src="180710_chrisknight_cinematiclighting_christinemarucci_digitalweb_1600x900_finalv3.jpg" alt="">
+                <img class="list-image-content" src="180710_chrisknight_cinematiclighting_christinemarucci_digitalweb_1600x900_finalv3.jpg" alt="">
+                <img class="list-image-content" src="180710_chrisknight_cinematiclighting_christinemarucci_digitalweb_1600x900_finalv3.jpg" alt="">
+                <img class="list-image-content" src="180710_chrisknight_cinematiclighting_christinemarucci_digitalweb_1600x900_finalv3.jpg" alt="">
+                <img class="list-image-content" src="180710_chrisknight_cinematiclighting_christinemarucci_digitalweb_1600x900_finalv3.jpg" alt="">
+                <img class="list-image-content" src="180710_chrisknight_cinematiclighting_christinemarucci_digitalweb_1600x900_finalv3.jpg" alt="">
+                <img class="list-image-content" src="180710_chrisknight_cinematiclighting_christinemarucci_digitalweb_1600x900_finalv3.jpg" alt="">
+                <img class="list-image-content" src="180710_chrisknight_cinematiclighting_christinemarucci_digitalweb_1600x900_finalv3.jpg" alt="">
+                <img class="list-image-content" src="180710_chrisknight_cinematiclighting_christinemarucci_digitalweb_1600x900_finalv3.jpg" alt="">
+                <img class="list-image-content" src="180710_chrisknight_cinematiclighting_christinemarucci_digitalweb_1600x900_finalv3.jpg" alt="">
+                <img class="list-image-content" src="180710_chrisknight_cinematiclighting_christinemarucci_digitalweb_1600x900_finalv3.jpg" alt="">
+            </div>
+        </div>
+        <div class="playlist-slideshow  text-white float-left" >
+            <i class="playlist-slider fas fa-chevron-up align-middle px-3"></i>
+        </div>
+        
+        <div class="info-slideshow  text-white float-left">
+            <i class="info-slider fas fa-chevron-right align-middle px-3"></i>
+        </div>
+        <div class="vid-information vid-information-hided text-white">
+            <h1 class="font-weight-light" style="font-size: 3vw">algun titulo bien largo para probaro</h1>
+            <h2 class="font-weight-light" style="font-size: 2.5vw;">Sin titulo de clase</h2>
+            <h3 class="font-weight-light" style="font-size: 2vw">Sin autor</h3>
+            <h4 class="font-weight-light">Sin duracion de clase</h4>
+        </div>
+        
+        <div class="px-4 py-2 video-progress">
+            <div class="progress">
+                <div class="progress-bar bg-danger" role="progressbar" style="width: 100%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+            <div>
+                <input class="progress-range progress" type="range"  min="0" max="100" value="0">
+            </div>
+        </div>
+        <div class="controls">
+            <i class="fas fa-play controls-color play "></i>
+            <i class="fas fa-volume-up controls-color px-1"></i><input type="range" class="volume-level slider" min="0" max="10" value="5">
+            <span class="current-time font-weight-light time-section"><b>00:00:00 - 00:00:00</b></span>
+            <i class="fas fa-expand float-right py-1 px-3 full-screen controls-color"></i>
+            <i class="pip far fa-share-square float-right py-1 pip-button px-1 controls-color"></i>
+        </div>
+        
+        <div class="back-ten-seconds">
+            <i class="fal fa-undo" ></i>
+            <span>10</span>
+        </div>
+        <div class="fordward-ten-seconds">
+            <i class="fal fa-undo"></i>
+            <span>10</span>
+        </div>
+        
+    </div>
+    
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/moment@2.25.3/moment.js"></script>
+    <script src="assets/js/wineplayer.js"></script>
+
+</body>
+</html>

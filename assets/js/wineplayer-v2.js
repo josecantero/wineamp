@@ -346,14 +346,20 @@ let jqxhr = $.getJSON( "videos.json", function() {
  * Volume control
  */
 $('.volume-icon').click(function(){
+    var volume_control_display;
+    if(screen.width<850){
+        volume_control_display = '.mobile-screen-volume';
+    }else{
+        volume_control_display = '.wide-screen-volume';
+    }
     if($('video')[0].volume > 0){
         $('video')[0].volume = 0;
-        $('.volume-icon').removeClass('fa-volume-up');
-        $('.volume-icon').addClass('fa-volume-slash');
+        $(volume_control_display).removeClass('fa-volume-up');
+        $(volume_control_display).addClass('fa-volume-slash');
     }else{
         $('video')[0].volume = 1;
-        $('.volume-icon').removeClass('fa-volume-slash');
-        $('.volume-icon').addClass('fa-volume-up');
+        $(volume_control_display).removeClass('fa-volume-slash');
+        $(volume_control_display).addClass('fa-volume-up');
     }
 
 });

@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <style>
+        @media(max-width: 899px){
+            .player{
+                width:100%;
+            }
+        }
+
+        @media(min-width: 900px){
+            .player{
+                width:60%;
+            }
+        }
+        
+        video{
+            height:100%;
+            width:100%;
+            top:0px;
+            left:0px;
+        }
+
+        .controls-color{
+            color: white;
+        }
+
+        .controls-vo{
+            position: relative;
+            top:-35px;
+            padding-left:10px;
+        }
+
+        .controls-ho{
+            padding-left: 5px;
+        }
+
+        .control-volume-circle{
+            background-color: white;
+            width: 16px;
+            height: 16px;
+            border-radius: 10px;
+            left: 50px;
+            position: absolute;
+        }
+
+        .progress{
+            height: 0.3rem; 
+        }
+        
+        .control{
+            position: relative;
+            bottom: 149px;
+            text-shadow:0px 1px 5px black;
+            opacity: 0;
+            transition: opacity .2s;
+            margin: 50px;
+        }
+        @media(min-width: 1100px){
+            .control{
+                font-size: 1.5rem;
+            }
+        }
+        @media(max-width: 1020px){
+            .control{
+            position: relative;
+            bottom: 149px;
+            text-shadow:0px 1px 5px black;
+            opacity: 0;
+            transition: opacity .2s;
+            margin: 50px;
+        }
+        }
+
+        video:hover ~ .control{
+            opacity: 1;
+        }
+
+        .control:hover{
+            opacity:1;
+        }
+        
+        .font-size{
+            font-size: medium;
+        }
+
+        .volume-level{
+            width: 50px;
+            height: 5px;
+        }
+
+        .play{
+            opacity:0.5;
+            transition: opacity .5s;
+        }
+        .play:hover{
+            opacity: 1;
+        }
+
+        .fa-volume-up{
+            opacity: 0.5;
+        }
+
+        .slider {
+            -webkit-appearance: none;
+            background: #d3d3d3;
+            outline: none;
+            opacity: 0.7;
+            -webkit-transition: .2s;
+            transition: opacity .2s;
+            color: gray;
+            border: 0.3px solid #737266;
+            top: -3px;
+            position: relative;
+        }
+
+        .slider:hover {
+            opacity: 1;
+        }
+
+        .slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 10px;
+            height: 10px;
+            background:white;
+            cursor: pointer;
+        }
+
+        .slider::-moz-range-thumb {
+            width: 10px;
+            height: 10px;
+            background: white;
+            cursor: default;
+        }
+
+        .current-time, .duration{
+            opacity: 0.7;
+        }
+
+
+        .time-section{
+            -webkit-transition: .3s;
+        }
+
+        .time-section:hover{
+            opacity: 1;
+            cursor: default;
+            transition: opacity .3s;
+        }
+
+        .full-screen{
+            opacity:0.5;
+            transition: opacity .3s;
+        }
+
+        .full-screen:hover{
+            opacity: 1;
+        }
+
+        @media screen and (-webkit-min-device-pixel-ratio:0) {
+            input[type='range']::-webkit-slider-runnable-track {
+            -webkit-appearance: none;
+            color: white;
+            }
+        }
+
+        /** FF*/
+        input[type="range"]::-moz-range-progress {
+            background-color: white; 
+        }
+
+        input[type="range"]::-moz-range-track {  
+            background-color: gray;
+        }
+
+        /* IE*/
+        input[type="range"]::-ms-fill-lower {
+            background-color: red; 
+        }
+
+        input[type="range"]::-ms-fill-upper {  
+            background-color: gray;
+        }
+
+        .progress-range{
+            position: relative;
+            top: -5px;
+            width: 100%;
+            opacity: 0;
+        }
+
+        @media(min-width:1020px){
+            .vid-information-show{
+                position:absolute;
+                top:10%;
+                opacity:0.7;
+                padding-left: 1rem;
+                width: 30%;
+                font-size: 30px;
+                display: none;
+                animation-name: show-info;
+                animation-duration: 0.5s;
+                text-shadow:0px 1px 5px black;
+            }
+            @keyframes show-info {
+                from {opacity:0; padding-left: 0.5rem;}
+                to {opacity: 1; padding-left: 1rem;}
+            }
+            @keyframes hide-info {
+                from {opacity:1; padding-left: 1rem;}
+                to {opacity: 0; padding-left: 0rem;}
+            }
+
+            .info-slideshow{
+                position: absolute;
+                color: white;
+                top:35%;
+                opacity: 0.4;
+                -webkit-transition: .2s;
+                transition: opacity .2s;
+                
+            }
+            .info-slideshow:hover{
+                opacity: 1;
+            }        
+        }
+
+        @media(max-width:1019px){
+            .vid-information-show, .info-slideshow{
+                display: none;
+            }
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="player">
+        
+        <div class="vid-information-show text-white">
+            <h1 class="vid-title font-weight-light">Cinematic Lighting</h1>
+            <h2 class="vid-subtitle font-weight-light">22 - Theater Shoot Capturing The 1st Shot</h2>
+            <h3 class="vid-autor font-weight-light">By Chris Knight</h3>
+            <h4 class="vid-time-info font-weight-light">Duration: 00:27:37</h4>
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <a href="#" class="btn btn-lg btn-outline-light btn-flat btn-block btn-playlist">Playlist</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="info-slideshow"><i class="info-slider fas fa-chevron-right"></i></div>
+        <video preload="auto" poster="https://agc.creativelive.com/agc/201808-KNIGHTCINEMATIC/180710_chrisknight_cinematiclighting_christinemarucci_digitalweb_1600x900_finalv3.jpg" >
+            <source src="22-CinematicLightingForPortraiture-ChrisKnight-TheaterShootCapturingThe1stShot-HD.mp4" type="video/mp4">
+        </video>
+        <div class="control">
+            <div class="">
+                <div class="px-1 py-2">
+                    <div class="progress">
+                        <div class="progress-bar bg-danger" role="progressbar" style="width: 100%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                    <div>
+                        <input class="progress-range progress" type="range"  min="0" max="100" value="0">
+                    </div>
+                </div>
+                <div class="px-3 text-white">
+                    <div class="row">
+                        <div class="px-1 py-1">
+                            <i class="fas fa-play controls-color play"></i>
+                        </div>
+                        <div class="px-1 py-1">
+                            <i class="fas fa-volume-up px-1"></i><input type="range" class="volume-level slider" min="0" max="10" value="5">
+                        </div>
+                        <div class="px-1 py-1 font-size ">
+                            <span class="current-time font-weight-light time-section"><b>00:00:00 - 00:00:00</b></span>
+                            <span class="duration font-weight-light time-section"></span>
+                        </div>
+                        <div class="col"><i class="fas fa-expand float-right py-2 full-screen"></i></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/moment@2.25.3/moment.js"></script>
+    <script>
+        $(window).on("load",function(){
+            let elemIsInFullScreen = false;
+            var mouseStop = null
+
+            let play = true;
+            let prog_bar = $('.progress-bar').attr('aria-valuenow');
+            let current_time = 0;
+            let video_seconds_duration = $('video')[0].duration;
+            let video_formated_duration = moment.duration(video_seconds_duration, 'seconds');
+            let video_current_time = 0;
+            let percentage = 0;
+            let currentTimeFromPercentage = 0;
+
+
+            let total_hours = video_formated_duration.hours();
+            let total_minutes = video_formated_duration.minutes();
+            let total_seconds = video_formated_duration.seconds();
+
+            let current_horas = '00';
+            let current_minutos = '00';
+            let current_segundos = '00';
+
+            if(video_formated_duration.hours() < 10) total_hours = '0' + video_formated_duration.hours();
+            if(video_formated_duration.minutes() < 10) total_minutes = '0' + video_formated_duration.minutes(); 
+            if(video_formated_duration.seconds() < 10) total_seconds = '0' + video_formated_duration.seconds();
+
+            $('.current-time').html('<b>'+current_horas+':'+current_minutos+':'+current_segundos+' - '+total_hours+':'+total_minutes+':'+total_seconds+'</b>');
+                    
+            $('.play').click(function(){
+                playVideo();
+            });
+
+            $(document).on('input', '.slider', function() {
+                $('video')[0].volume = $(this).val()/10;
+            });
+
+            $(document).on('input', '.progress-range', function() {
+                currentTimeFromPercentage = $('video')[0].duration * $('.progress-range').val() / 100;
+                $('video')[0].currentTime = currentTimeFromPercentage;
+            });
+
+
+            $('video').on('click',function(){
+                if(screen.width > 1020){
+                    if($('video')[0].paused){
+                        play = true; // es true porque en playVideo() se cambiará el estado
+                        playVideo();
+                    }
+                    else{
+                        play = false; // es false porque en playVideo se cambiará el estado
+                        playVideo();
+                    }
+                }else{
+                    if($('.control').css('opacity') == 0)
+                        $('.control').css('opacity','1');
+                    else
+                        $('.control').css('opacity','0');
+                }
+                
+            });
+
+
+            function playVideo(){
+                if(play){
+                    $('.play').removeClass('fa-play');
+                    $('.play').addClass('fa-pause');
+                    play = false;
+                    $('video').trigger('play');
+                }
+                else{
+                    $('.play').removeClass('fa-pause');
+                    $('.play').addClass('fa-play');
+                    play = true
+                    $('video').trigger('pause');
+                }
+
+                $('video').on('timeupdate', function(){
+                    current_time = $('video')[0].currentTime;
+                    percentage = (100 * current_time / video_seconds_duration)+'%';
+
+                    if(percentage == 'NaN%'){
+                        percentage = '2%';
+                    }
+
+                    $('.progress-bar').css('width',percentage);
+                    
+                    video_current_time = moment.duration(current_time, 'seconds');
+                    if(video_current_time.hours() < 10) current_horas = '0' + video_current_time.hours();
+                    else current_horas = video_current_time.hours();
+
+                    if(video_current_time.minutes() < 10) current_minutos = '0' + video_current_time.minutes();
+                    else current_minutos = video_current_time.minutes();
+
+                    if(video_current_time.seconds() < 10) current_segundos = '0'+ video_current_time.seconds();
+                    else current_segundos = video_current_time.seconds();
+                    
+                    $('.current-time').html('<b>'+current_horas+':'+current_minutos+':'+current_segundos+' - '+total_hours+':'+total_minutes+':'+total_seconds+'</b>');
+                });     
+            }
+
+            $('.full-screen').on('click',function(){
+                var myVideo =  $('.player')[0];
+                openFullscreen(myVideo)    
+            });
+
+            $('video').on('dblclick',function(){
+                var myVideo =  $('.player')[0];
+                openFullscreen(myVideo);
+                playVideo();
+            });
+
+            function openFullscreen(myVideo) {
+                var elem = myVideo
+                if(!elemIsInFullScreen){
+                    elemIsInFullScreen = true;
+                    if (elem.requestFullscreen) {
+                        elem.requestFullscreen();
+                    } else if (elem.mozRequestFullScreen) { /* Firefox */
+                        elem.mozRequestFullScreen();
+                    } else if (elem.webkitRequestFullscreen) { /* Chrome, Safari & Opera */
+                        elem.webkitRequestFullscreen();
+                    } else if (elem.msRequestFullscreen) { /* IE/Edge */
+                        elem.msRequestFullscreen();
+                    }
+                }else {
+                    elemIsInFullScreen = false;
+                    if (document.exitFullscreen) {
+                        document.exitFullscreen();
+                    } else if (document.webkitExitFullscreen) {
+                        console.log('shit');
+                        document.webkitExitFullscreen();
+                    } else if (document.mozCancelFullScreen) {
+                        document.mozCancelFullScreen();
+                    } else if (document.msExitFullscreen) {
+                        document.msExitFullscreen();
+                    }
+                }
+            }
+
+            $('.player').on('mousemove',function(){
+                stopMouseTimeout();
+                $('video').css('cursor','default');
+                $('.control').css('opacity','1');
+                mouseStop = setTimeout(function(){
+                    $('video').css('cursor','none');
+                    if($('video').css('cursor')=='none'){
+                        $('.control').css('opacity','0');
+                    }
+                },5000);
+            });
+
+            $('.player').on('mouseout',function(){
+                $('.control').css('opacity','0');
+            });
+
+            function stopMouseTimeout(){
+                clearTimeout(mouseStop);
+            }
+
+            $('.info-slideshow').click(function(){
+                if($('.vid-information-show').css('display') == 'none'){
+                    $('.vid-information-show').css('display','block');
+                    $('.vid-information-show').css('opacity','1');
+                    $('.info-slider').removeClass('fa-chevron-right')
+                    $('.info-slider').addClass('fa-chevron-left')
+                }else{
+                    $('.vid-information-show').css('display','none');
+                    $('.info-slider').removeClass('fa-chevron-left')
+                    $('.info-slider').addClass('fa-chevron-right')
+                    $('.scrollmenu').css('display','none');
+                }
+            });
+
+            $('.btn-playlist').on('click',function(){
+                if( $('.scrollmenu').css('opacity') == '0')
+                    $('.scrollmenu').css('opacity','1');
+                else
+                    $('.scrollmenu').css('display','none');
+            });
+        });
+    </script>
+</body>
+</html>
+
+

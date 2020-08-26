@@ -368,6 +368,10 @@ video{
     .screen-controls i:hover{
         opacity: 1;
     }
+
+    .screen-controls .volume-icon{
+        display: none;
+    }
     
     .backward-ten{
         position: absolute;
@@ -555,7 +559,7 @@ video{
     }
 
     .backward-ten, .fa-undo-alt, .forward-ten, .fa-redo-alt,
-    .fa-volume-up, .total-time, .time-separation{
+    .fa-volume-up, .total-time, .time-separation, .fa-info-circle{
         display: none;
     }
 
@@ -618,6 +622,10 @@ video{
 
     .screen-controls i {
         padding-right: 2.5rem;
+    }
+
+    .screen-controls .volume-icon{
+        display: inline-block;
     }
 
     .video-progress::-webkit-slider-thumb {
