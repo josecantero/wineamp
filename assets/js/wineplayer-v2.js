@@ -219,6 +219,9 @@ let jqxhr = $.getJSON( "videos.json", function() {
         }
     });
 
+    /*****************************************************************************
+     * 10 SECONDS FORDWARD AND 10 SECONDS BACKWARD [wide screen & mobile screen]
+     ****************************************************************************/
     $('.fa-undo-alt').click(function(){
         if($('video')[0].currentTime > 0){
             if($('video')[0].currentTime < 10){
@@ -235,6 +238,65 @@ let jqxhr = $.getJSON( "videos.json", function() {
         }else{
             $('video')[0].currentTime =$('video')[0].currentTime + 10
         }
+    });
+
+    var lefttouchtime = 0;
+    var lefttouchcount = 0;
+    $(".mobile-10s-step-backward").on("click", function() {
+        if(lefttouchcount < 2){
+            setTimeout(function(){
+                if($('.controls-container').css('display') == 'none'){
+                    $('.controls-container').css('display','flex');
+                    $('.controls-container-progress-bar').css('display','flex');
+                }
+                else{
+                    $('.controls-container').css('display','none');
+                    $('.controls-container-progress-bar').css('display','none');
+                }
+                lefttouchcount = 0;
+            },1000)
+        }
+        if (((new Date().getTime()) - lefttouchtime) < 500) {
+            if($('video')[0].currentTime > 0){
+                if($('video')[0].currentTime < 10){
+                    $('video')[0].currentTime = 0
+                }else{
+                    $('video')[0].currentTime =$('video')[0].currentTime - 10
+                }
+            }
+            lefttouchcount += 1
+            clearTimeout();
+        }
+        lefttouchtime = new Date().getTime();
+    });
+
+    var righttouchtime = 0;
+    var righttouchcount = 0
+    $(".mobile-10s-step-fordward").on("click", function() {
+        console.log('hola');
+        if(righttouchcount<2){
+            setTimeout(function(){
+                if($('.controls-container').css('display') == 'none'){
+                    $('.controls-container').css('display','flex');
+                    $('.controls-container-progress-bar').css('display','flex');
+                }
+                else{
+                    $('.controls-container').css('display','none');
+                    $('.controls-container-progress-bar').css('display','none');
+                }
+                righttouchcount = 0;
+            },1000);
+        }
+        if (((new Date().getTime()) - righttouchtime) < 500) {
+            if($('video')[0].duration - $('video')[0].currentTime < 10){
+                $('video')[0].currentTime = $('video')[0].duration;
+            }else{
+                $('video')[0].currentTime =$('video')[0].currentTime + 10
+            }
+            righttouchcount += 1
+            clearTimeout();
+        }
+        righttouchtime = new Date().getTime();
     });
 
 
@@ -323,7 +385,6 @@ let jqxhr = $.getJSON( "videos.json", function() {
 
     function previousVideo(){
         videoindex = videoindex - 1;
-        console.log(videoindex);
         if(videoindex < videojsonlen & videoindex >= 0){
             setVideoVarSettings();
             setVideoOnHTML();
@@ -386,3 +447,8 @@ https://jsfiddle.net/daltonrenaldo/4zxm7fw0/
  */
 
 
+/**
+ * DOUBLE CLICK FOR 10 SECONDS FORWARD
+ * https://www.w3schools.com/jquery/event_dblclick.asp
+ * https://stackoverflow.com/questions/27560653/jquery-on-double-click-event-dblclick-for-mobile
+ */
