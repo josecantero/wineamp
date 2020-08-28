@@ -607,7 +607,7 @@ video{
 
     .fa-step-backward{
         position: absolute;
-        bottom: 48%;
+        bottom: 46%;
         font-size: 1.5em;
         left: 3rem;
     }
@@ -785,6 +785,19 @@ video{
     }
 
     
+}
+
+@media (min-width:300px) and (max-width:399px){
+    .screen-controls{
+        bottom: 1.2rem;
+    }
+    .video-progress{
+        bottom: 3.7rem;
+    }
+
+    .current-time{
+        bottom:52.23px;
+    }
 }
 
 @media (min-width:400px) and (max-width:499px){
