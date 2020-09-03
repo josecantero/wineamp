@@ -22,6 +22,9 @@ let total_hours;
 let total_minutes;
 let total_seconds;
 
+/*****************************************
+ *  add a renderizer for the video player
+ *****************************************/
 setTimeout(setVideo,100);
 
 function setVideo(){
