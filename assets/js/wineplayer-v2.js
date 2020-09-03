@@ -22,6 +22,8 @@ let total_hours;
 let total_minutes;
 let total_seconds;
 
+let secondsRegressInterval;
+
 /*****************************************
  *  add a renderizer for the video player
  *****************************************/
@@ -67,6 +69,7 @@ function setVideo(){
             $('.h3-autor')[0].innerHTML = videojson[videoindex].autor;
             $('.h5-description')[0].innerHTML = videojson[videoindex].description
             $('.next-video-preview-image').attr('src',videojson[videoindex].nextVideo);
+            $('.nextVideoPoster').attr('src',videojson[videoindex].nextVideo);
             $('.next-video-title')[0].innerHTML = videojson[videoindex].nextVideoName;
             $('.next-video-serie')[0].innerHTML = videojson[videoindex].serie;
             //$('.next-video-autor')[0].innerHTML = videojson[videoindex].autor;
@@ -216,13 +219,32 @@ function setVideo(){
              ********************************************/
             if($('video')[0].currentTime >= video_seconds_duration){
                 if(videoindex<videojsonlen-1){
-                    nextVideo();
+                    $('video').css('display: none');
+                    $('.nextVideoPoster').css('display','block');
+                    $('.preloader').css('display','block');
+                    $('.regresive-counter').css('display','block');
+                    secondsRegressInterval = setInterval(fiveSecondsRegress,1000);
+                    setTimeout(nextVideo,5000);
                 }else{
                     letChangeVideoState();
                     $('video')[0].load();
                 }
             }
         });
+
+        function fiveSecondsRegress(){
+            var secondRegress = $('.regresive-counter')[0].innerHTML;
+            secondRegress = parseInt(secondRegress);
+            secondRegress = secondRegress - 1;
+            $('.regresive-counter')[0].innerHTML = secondRegress;
+            if(secondRegress == 0){
+                clearInterval(secondsRegressInterval);
+                $('.preloader').css('display','none');
+                $('.regresive-counter').css('display','none');
+                $('.nextVideoPoster').css('display','none');
+                $('.regresive-counter')[0].innerHTML = '5';
+            }
+        }
 
         /*****************************************************************************
          * 10 SECONDS FORDWARD AND 10 SECONDS BACKWARD [wide screen & mobile screen]
@@ -330,15 +352,7 @@ function setVideo(){
                 if(screen.width<850){
                     screen.orientation.lock('landscape');
                 }
-
                 // https://usefulangle.com/post/105/javascript-change-screen-orientation
-                /*screen.orientation.lock("portrait")
-                .then(function() {
-                    console.log('Locked');
-                })
-                .catch(function(error) {
-                    console.log(error);
-                });*/
             }else {
                 playerIsInFullScreen = false;
                 if (document.exitFullscreen) {
@@ -374,6 +388,7 @@ function setVideo(){
                 letChangeVideoState();
                 letPlayVideo('play');
             }else{
+                $('video').css('display','block');
                 videoindex--;
                 $('video')[0].load();
             }

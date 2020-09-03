@@ -1,8 +1,13 @@
 $(document).ready(function(){
-    $('.wineplayer')[0].innerHTML = '<video  poster="" >'+
+    $('.wineplayer')[0].innerHTML = 
+        '<video  poster="" >'+
             '<source src="">'+
         '</video>'+
-        
+        '<div class="center-controls">'+
+            '<img class="nextVideoPoster" src="">'+
+            '<span class="regresive-counter">5</span>'+
+            '<div class="preloader"></div>'+
+        '</div>'+
         '<div class="mobile-10s-step-backward">'+
         '</div>'+
         '<div class="mobile-10s-step-fordward">'+

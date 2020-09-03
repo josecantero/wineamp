@@ -23,6 +23,54 @@ video{
     width: 100%;
 }
 
+.nextVideoPoster{
+    display: none;
+    position: absolute;
+    height: 100%;
+    top: 0;
+}
+
+.preloader {
+    width: 70px;
+    height: 70px;
+    border: 10px solid #eee;
+    border-top: 10px solid #666;
+    border-radius: 50%;
+    animation-name: girar;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    position: absolute;
+    top: 40%;
+    display: none;
+}
+
+@keyframes girar {
+    from {
+        transform: rotate(0deg);
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+}
+    to {
+        transform: rotate(360deg);
+        -webkit-transform: rotate(360deg);
+        -moz-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        -o-transform: rotate(360deg);
+}
+}
+
+.regresive-counter{
+    font-size: xx-large;
+    color: white;
+    position: absolute;
+    top: 47%;
+    display: none;
+}
+
+  
+
  .wineplayer:-moz-full-screen .video-info {
     top: 13rem;
     left: 5rem;
