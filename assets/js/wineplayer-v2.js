@@ -23,6 +23,7 @@ let total_minutes;
 let total_seconds;
 
 let secondsRegressInterval;
+let fiveSecondsRegressVar;
 
 /*****************************************
  *  add a renderizer for the video player
@@ -224,7 +225,7 @@ function setVideo(){
                     $('.preloader').css('display','block');
                     $('.regresive-counter').css('display','block');
                     secondsRegressInterval = setInterval(fiveSecondsRegress,1000);
-                    setTimeout(nextVideo,5000);
+                    fiveSecondsRegressVar = setTimeout(nextVideo,5000);
                 }else{
                     letChangeVideoState();
                     $('video')[0].load();
@@ -232,6 +233,9 @@ function setVideo(){
             }
         });
 
+        /**************************************************
+         * For to play the next video must pass 5 seconds.
+         **************************************************/
         function fiveSecondsRegress(){
             var secondRegress = $('.regresive-counter')[0].innerHTML;
             secondRegress = parseInt(secondRegress);
@@ -387,6 +391,7 @@ function setVideo(){
                 playVideo = false;
                 letChangeVideoState();
                 letPlayVideo('play');
+                clearTimeout(fiveSecondsRegressVar);
             }else{
                 $('video').css('display','block');
                 videoindex--;
