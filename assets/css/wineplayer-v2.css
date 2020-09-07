@@ -377,10 +377,12 @@ video{
         bottom: 20px;
         display: flex;
         justify-content: space-between;
-        opacity: 0.7;
-        -webkit-transition: .2s;
+        -webkit-transition: opacity .2s;
         transition: opacity .2s;
-    }
+        -moz-transition: opacity .2s;
+        -ms-transition: opacity .2s;
+        -o-transition: opacity .2s;
+}
 
     .controls-container i, span{
         cursor:pointer;
@@ -398,9 +400,7 @@ video{
 
     .play-controls i{
         padding-right: 20px;
-        opacity: 0.7;
-        -webkit-transition: .2s;
-        transition: opacity .2s;
+        
     }
     .play-controls i:hover{
         opacity: 1;
@@ -408,12 +408,6 @@ video{
 
     .screen-controls i{
         padding-left: 10px;
-        opacity: 0.7;
-        -webkit-transition: opacity .2s;
-        transition: opacity .2s;
-        -moz-transition: opacity .2s;
-        -ms-transition: opacity .2s;
-        -o-transition: opacity .2s;
 }
 
     .screen-controls i:hover{

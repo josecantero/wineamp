@@ -304,7 +304,6 @@ function setVideo(){
         var righttouchtime = 0;
         var righttouchcount = 0
         $(".mobile-10s-step-fordward").on("click", function() {
-            console.log('hola');
             if(righttouchcount<2){
                 setTimeout(function(){
                     if($('.controls-container').css('display') == 'none'){
